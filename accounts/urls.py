@@ -17,6 +17,3 @@ urlpatterns = [
     path("password_reset/complete/", auth_views.PasswordResetCompleteView.as_view(), name="password_reset_complete"),
     # path("login/", auth_views.LoginView.as_view(), name="login"),
 ]
-
-
-# CREDS FOR test@gmail.com, PWD: mangoes_bananas

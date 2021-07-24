@@ -8,7 +8,7 @@
 }
 
 * {
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
 }
 
 h3 {
@@ -23,7 +23,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type='number'] {
+input[type="number"] {
     -moz-appearance: textfield;
 }
 
@@ -114,7 +114,7 @@ body {
 }
 
 .item::after {
-    content: '';
+    content: "";
     position: absolute;
     display: block;
     background: inherit;
@@ -149,7 +149,7 @@ body {
 }
 
 .item-image:before {
-    content: '';
+    content: "";
     display: block;
     padding-top: 100%;
     overflow: hidden;
@@ -162,6 +162,7 @@ body {
     width: 100%;
     height: auto;
     line-height: 0;
+    height: 270px;
 }
 
 .item-text {
@@ -368,7 +369,7 @@ body {
 
 .radiobtn label:after,
 .radiobtn label:before {
-    content: '';
+    content: "";
     position: absolute;
     right: 11px;
     top: 13px;
@@ -392,23 +393,23 @@ body {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNS4zIDEzLjIiPiAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTE0LjcuOGwtLjQtLjRhMS43IDEuNyAwIDAgMC0yLjMuMUw1LjIgOC4yIDMgNi40YTEuNyAxLjcgMCAwIDAtMi4zLjFMLjQgN2ExLjcgMS43IDAgMCAwIC4xIDIuM2wzLjggMy41YTEuNyAxLjcgMCAwIDAgMi40LS4xTDE1IDMuMWExLjcgMS43IDAgMCAwLS4yLTIuM3oiIGRhdGEtbmFtZT0iUGZhZCA0Ii8+PC9zdmc+);
 }
 
-.radiobtn input[type='radio'] {
+.radiobtn input[type="radio"] {
     display: none;
     position: absolute;
     width: 100%;
     appearance: none;
 }
 
-.radiobtn input[type='radio']:checked + label {
+.radiobtn input[type="radio"]:checked + label {
     background: #fdcb77;
     border-color: #fcae2c;
 }
 
-.radiobtn input[type='radio']:checked + label:after {
+.radiobtn input[type="radio"]:checked + label:after {
     background: #fcae2c;
 }
 
-.radiobtn input[type='radio']:checked + label:before {
+.radiobtn input[type="radio"]:checked + label:before {
     width: 20px;
     height: 20px;
 }
@@ -502,10 +503,10 @@ body {
 }
 
 .input-field
-    > input[type]:-webkit-autofill:not(.browser-default):not([type='search'])
+    > input[type]:-webkit-autofill:not(.browser-default):not([type="search"])
     + label,
-.input-field > input[type='date']:not(.browser-default) + label,
-.input-field > input[type='time']:not(.browser-default) + label {
+.input-field > input[type="date"]:not(.browser-default) + label,
+.input-field > input[type="time"]:not(.browser-default) + label {
     -webkit-transform: translateY(-14px) scale(0.8);
     transform: translateY(-14px) scale(0.8);
     -webkit-transform-origin: 0 0;

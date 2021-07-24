@@ -1,24 +1,39 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from .models import Category, Product, Review
 from .forms import ReviewForm
 from cart.forms import CartAddProductForm
 
 
 def product_list(request, category_slug=None):
-    categories = Category.objects.all()
+    categories = Category.objects.all().exclude()
 
     if category_slug:
         requested_category = get_object_or_404(Category, slug=category_slug)
         products = Product.objects.filter(category=requested_category)
+        paginator = Paginator(products, 10) # list 10 products per page
+        page = request.GET.get('page')
 
     else:
         requested_category = None
         products = Product.objects.all()
+        paginator = Paginator(products, 10) # list 10 products per page
+        page = request.GET.get('page')
+    
+    try:
+        post_list = paginator.page(page)
+    except PageNotAnInteger:
+            # If page is not an integer deliver the first page
+        post_list = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range deliver last page of results
+        post_list = paginator.page(paginator.num_pages)
 
     return render(
         request,
         "product/list.html",
-        {"categories": categories, "requested_category": requested_category, "products": products},
+        {"categories": categories, "requested_category": requested_category, "products": post_list, 'page': page,
+                   'post_list': post_list},
     )
 
 
